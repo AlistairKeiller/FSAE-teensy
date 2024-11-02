@@ -10,7 +10,7 @@ void setup() {
 void loop() {
   for (uint8_t pin : READ_PINS) {
     int val = analogRead(pin);
-    Serial.print(pin);
+    Serial.print(val);
     Serial.print(' ');
   }
   Serial.print("\n");
