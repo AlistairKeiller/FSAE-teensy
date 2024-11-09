@@ -1,11 +1,17 @@
 #include <Arduino.h>
 
 static const uint8_t DELAY = 8; // ms
-static const uint8_t READ_PINS[] = {A0, A1, A2}; // brake, shockA, shockB
+static const uint8_t READ_PINS[] = {A0, A1, A2, A3}; // brakeA, brakeB, shockA, shockB
+static const uint8_t WRITE_PINS[] = {0, 1, 2, 3}; // brakeA, brakeB, shockA, shockB
 
 void setup()
 {
   Serial.begin(9600);
+  for (uint8_t pin : WRITE_PINS)
+  {
+    pinMode(pin, OUTPUT);
+    digitalWrite(pin, HIGH);
+  }
 }
 
 void loop()
