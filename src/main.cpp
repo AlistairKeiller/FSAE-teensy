@@ -16,11 +16,11 @@ void setup()
 
 void loop()
 {
-  for (uint8_t i = 0; i < sizeof(READ_PINS) / sizeof(READ_PINS[0]); ++i)
+  for (uint8_t i = 0; i < sizeof(READ_PINS) / sizeof(uint8_t); ++i)
   {
     int val = analogRead(READ_PINS[i]);
     Serial.print(val);
-    if (i < sizeof(READ_PINS) / sizeof(READ_PINS[0]) - 1)
+    if (i < sizeof(READ_PINS) / sizeof(uint8_t) - 1)
     {
       Serial.print(' ');
     }
